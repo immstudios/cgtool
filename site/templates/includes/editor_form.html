@@ -1,0 +1,36 @@
+<form method="get" action="/">
+<input type="hidden" name="layout_name" value="{{ page.layout.name }}">
+{% for param in page.layout.params %}{% if param.title %}
+<div class="form-group">
+<label for="input-{{ param.name }}">{{ param.title }}</label>
+{% if param.type == "number"%}
+<input type="number" class="form-control" id="input-{{ param.name }}" name="{{ param.name }}" value="{{ page.params[param.name] }}">
+{% elif param.type == "boolean"%}
+<div class="checkbox"><label>
+<input type="checkbox" id="input-{{ param.name }}" name="{{ param.name }}" {% if page.params[param.name] == "1" %} checked{% endif %}>
+</label></div>
+{% elif param.type == "select"%}
+<select class="form-control" id="input-{{ param.name }}" name="{{ param.name }}">
+{% for key, label in get_options_data(param) %}
+<option value="{{ key }}" {% if page.params[param.name] == key %}SELECTED{% endif %}>
+{{ label }}
+</option>
+{% endfor %}
+</select>
+{% elif param.type == "timestamp"%}
+
+<div class='input-group date'>
+<input type='text' class="form-control" name="{{ param.name }}" value="{{ page.params[param.name] }}" />
+<span class="input-group-addon">
+<span class="glyphicon glyphicon-calendar"></span>
+</span>
+</div>
+{% elif param.type == "textarea" %}
+<textarea class="form-control" id="input-{{ param.name }}" name="{{ param.name }}">{{ page.params[param.name] }}</textarea>
+{% else %}
+<input type="text" class="form-control" id="input-{{ param.name }}" name="{{ param.name }}" value="{{ page.params[param.name] }}">
+{% endif %}
+</div>
+{% endif %}{% endfor %}
+<button type="submit" class="btn btn-primary">Preview</button>
+</form>

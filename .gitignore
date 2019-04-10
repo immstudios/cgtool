@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+
+_res/
+vendor/
+apps/*
+plugins/*.py
+settings.json

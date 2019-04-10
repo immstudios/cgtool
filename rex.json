@@ -1,0 +1,5 @@
+{
+    "https://github.com/immstudios/nxtools" : {"python-path" : true},
+    "https://github.com/immstudios/nxcg" : {"python-path" : true},
+    "https://github.com/martastain/cherryadmin" : {"python-path" : true}
+}

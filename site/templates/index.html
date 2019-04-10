@@ -1,0 +1,42 @@
+{% extends "_base.html" %}
+{% block content %}
+
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<div class="panel panel-default">
+<div class="panel-heading">
+Editor
+</div>
+<div class="panel-body">
+{% include "includes/editor_form.html" %}
+</div>
+</div>
+
+{% if page.has_caspar %}
+<div class="panel panel-default">
+<div class="panel-heading">
+ON-AIR controls
+</div>
+<div class="panel-body">
+<button class="btn btn-danger" onclick="casp_take();">Take</button>
+<button class="btn btn-warning" onclick="casp_clear();">Clear</button>
+</div>
+</div>
+{% endif %}
+</div> <!-- left column -->
+
+<div class="col-md-8">
+<div class="panel panel-default">
+<div class="panel-heading">
+Preview ({{ page.layout.title }})
+</div>
+<div id="preview-container">
+<img id="preview" src="/render/{{ user.name }}/{{ page.layout.name }}?{{ page.params | urlencode }}">
+</div>
+</div>
+</div> <!-- right column -->
+
+</div> <!-- row -->
+</div> <!-- container -->
+{% endblock %}

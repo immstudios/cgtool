@@ -1,37 +1,29 @@
-<nav class="navbar navbar-default">
-<div class="container-fluid">
-<div class="navbar-header">
-<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-<span class="sr-only">Toggle navigation</span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-</div>
+<nav id="site-nav" class="navbar navbar-expand-sm navbar-dark mb-3">
+    <a class="navbar-brand" href="/">{{ site.title }}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-nav"
+            aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-<div id="navbar" class="navbar-collapse collapse">
-<ul class="nav navbar-nav">
-<li class="dropdown">
-<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">layouts</a>
-<ul class="dropdown-menu">
-{% for layout in page.layouts %}
-{% if layout.visible %}
-<li{% if layout.name == page.layout.name %} class="active"{% endif %}><a href="?layout_name={{ layout.name }}">{{ layout.title }}</a></li>
-{% endif %}
-{% endfor %}
-</ul>
-</li>
-</ul>
-<ul class="nav navbar-nav navbar-right">
-<li class="dropdown">
-<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><i class="mdi mdi-account"></i></a>
-<ul class="dropdown-menu">
-<li><a href="?cgtool_action=reload">Reload templates</a></li>
-<li><a href="/logout">Log out</a></li>
-</ul>
-</li>
-</ul>
-</div><!--/.nav-collapse -->
+    <div class="collapse navbar-collapse" id="navbar-nav">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a href="" class="nav-link dropdown-toggle{% if page.name == "tool" %} active{% endif %}"
+                data-toggle="dropdown" id="navbarToolsDropdown">Layouts</a>
+                <div class="dropdown-menu">
+                    {% for layout in page.layouts %}
+                        {% if layout.visible %}
+                            <a class="dropdown-item{% if layout.name == page.layout.name %} active{% endif %}" href="?layout_name={{ layout.name }}">{{ layout.title }}</a>
+                        {% endif %}
+                    {% endfor %}
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="?cgtool_action=reload">Reload</a>
+                </div>
+            </li>
+        </ul>
 
-</div><!--/.container-fluid -->
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i></a></li>
+        </ul>
+    </div>
 </nav>

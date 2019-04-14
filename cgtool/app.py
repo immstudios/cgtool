@@ -85,8 +85,6 @@ class CGToolEditorHandler(CherryAdminView):
 
 
 
-
-
 class CGToolRenderHandler(CherryAdminRawView):
     def auth(self):
         return True

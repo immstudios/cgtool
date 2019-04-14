@@ -18,12 +18,12 @@
     {% endfor %}
 </head>
 
-<body id="body-{{ page.name }}">
+<body id="{{ page.name }}">
     {% if user %}{% include "includes/navbar.html" %}{% endif %}
 
-    <div id="content">
+    <main id="content">
         {% block content %}{% endblock %}
-    </div>
+    </main>
 
     {% for script in site.js %}
         <script src="{{ script }}"></script>

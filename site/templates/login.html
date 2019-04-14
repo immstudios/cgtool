@@ -1,10 +1,8 @@
 {% extends "_base.html" %}
 
 {% block content %}
-<div class="well" id="login-window">
-    <div class="row text-center">
-        <h1>{{ site.name }}</h1>
-    </div>
+<div class="well smallform" id="login-window">
+	<h1>{{ site.title }}</h1>
     <form method="post" action="/login">
         <div class="form-group label-floating">
             <label for="input-login" class="control-label">Login</label>

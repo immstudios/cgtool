@@ -10,7 +10,7 @@ from .app import CGToolEditorHandler, CGToolRenderHandler
 def site_context_helper():
     return {
             "name" : "cgtool",
-            "title" : "cgtool",
+            "title" : "CGTool",
             "author" : "imm studios, z.s.",
             "description" : "Template based graphics editor and renderer",
             "css" : [
@@ -40,6 +40,7 @@ def user_context_helper(meta):
     return meta
 
 cgtool_config = {
+        "minify_html" : True,
         "static_dir" : "site/static",
         "templates_dir" : "site/templates",
         "login_helper" : login_helper,
@@ -54,6 +55,7 @@ cgtool_config = {
     }
 
 for key in [
+
             "host",
             "port",
             "static_dir",

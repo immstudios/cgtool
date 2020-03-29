@@ -95,10 +95,12 @@ class CGToolRenderHandler(CherryAdminRawView):
         try:
             app_name, layout_name = args[1:]
         except ValueError:
+            self.response = 400
             self.body = get_error_image("Incorrect number of arguments")
             return
 
         if not app_name in apps_config.keys():
+            self.response = 400
             self.body = get_error_image("Unknown app name")
             return
 
@@ -107,14 +109,11 @@ class CGToolRenderHandler(CherryAdminRawView):
                 layout = data
                 break
         else:
+            self.response = 400
             self.body = get_error_image("Unknown layout requested")
             return
 
         render_params = {}
-#        for param in layout["params"]:
-#            if param.get("default", False):
-#                render_params[param["name"]] = param["default"]
-
         for param in kwargs:
             if param not in system_params:
                 render_params[param] = kwargs[param]
@@ -123,7 +122,9 @@ class CGToolRenderHandler(CherryAdminRawView):
         if result:
             self.body = result
         else:
-            cherrypy.response.status = 500
+            self.response = 500
             self.body = get_error_image("Render error")
-        logging.goodnews("Render (layout {}) finished in {:.02f}s".format(layout_name, time.time() - start_time))
-
+        logging.goodnews("Render (layout {}) finished in {:.02f}s".format(
+                layout_name,
+                time.time() - start_time
+            ))

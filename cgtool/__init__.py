@@ -40,9 +40,11 @@ def user_context_helper(meta):
     return meta
 
 cgtool_config = {
+        "port" : 8400,
         "minify_html" : True,
         "static_dir" : "site/static",
         "templates_dir" : "site/templates",
+        "sessions_dir" : "/tmp/cgtool-sessions",
         "login_helper" : login_helper,
         "site_context_helper" : site_context_helper,
         "page_context_helper" : page_context_helper,

@@ -21,7 +21,7 @@
 <body id="{{ page.name }}">
     {% if user %}{% include "includes/navbar.html" %}{% endif %}
 
-    <main id="content">
+    <main id="content" class="container-fluid">
         {% block content %}{% endblock %}
     </main>
 

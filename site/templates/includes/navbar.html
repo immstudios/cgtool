@@ -1,12 +1,7 @@
-<nav id="site-nav" class="navbar navbar-expand-sm navbar-dark mb-3">
+<nav id="site-nav" class="navbar navbar-expand-md navbar-dark fixed_top">
     <a class="navbar-brand" href="/">{{ site.title }}</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-nav"
-            aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbar-nav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
                 <a href="" class="nav-link dropdown-toggle{% if page.name == "tool" %} active{% endif %}"
                 data-toggle="dropdown" id="navbarToolsDropdown">Layouts</a>
@@ -25,5 +20,4 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i></a></li>
         </ul>
-    </div>
 </nav>

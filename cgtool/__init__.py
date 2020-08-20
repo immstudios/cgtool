@@ -14,14 +14,15 @@ def site_context_helper():
             "author" : "imm studios, z.s.",
             "description" : "Template based graphics editor and renderer",
             "css" : [
-                    "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css",
-                    "https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.10/combined/css/gijgo.min.css",
-                    "https://use.fontawesome.com/releases/v5.5.0/css/solid.css",
-                    "https://use.fontawesome.com/releases/v5.5.0/css/regular.css",
-                    "https://use.fontawesome.com/releases/v5.5.0/css/fontawesome.css",
-                    "https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=latin-ext",
+#                    "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css",
+ #                   "https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.10/combined/css/gijgo.min.css",
+ #                   "https://use.fontawesome.com/releases/v5.5.0/css/solid.css",
+ #                   "https://use.fontawesome.com/releases/v5.5.0/css/regular.css",
+ #                   "https://use.fontawesome.com/releases/v5.5.0/css/fontawesome.css",
+ #                   "https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=latin-ext",
 
-                    "/static/css/switch.css",
+  #                  "/static/css/switch.css",
+                                       "https://static.nebulabroadcast.com/nebula/css/nebula.css",
                     "/static/css/style.css"
                 ],
             "js" : [

@@ -1,0 +1,13 @@
+[Unit]
+Description=Nebula static CG renderer
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/cgtool
+ExecStart=/opt/cgtool/cgtool.py --daemon
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
